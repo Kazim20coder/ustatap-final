@@ -80,11 +80,11 @@ export default async function ProfilePage() {
                                 <h3 className="text-lg font-bold text-gray-900 mb-4">Əlaqə Məlumatları</h3>
                                 <div className="space-y-4 text-sm">
                                     <div>
-                                        <p className="text-gray-500 mb-1">E-poçt</p>
+                                        <p className="text-gray-600 mb-1">E-poçt</p>
                                         <p className="font-medium text-gray-900">{pro.email}</p>
                                     </div>
                                     <div>
-                                        <p className="text-gray-500 mb-1">Qeydiyyat Tarixi</p>
+                                        <p className="text-gray-600 mb-1">Qeydiyyat Tarixi</p>
                                         <p className="font-medium text-gray-900">{new Date(pro.createdAt).toLocaleDateString('az-AZ')}</p>
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@ export default async function ProfilePage() {
 
                                 {pro.proposals.length === 0 ? (
                                     <div className="text-center py-10">
-                                        <p className="text-gray-500 mb-4">Hələ heç bir işə təklif göndərməmisiniz.</p>
+                                        <p className="text-gray-600 mb-4">Hələ heç bir işə təklif göndərməmisiniz.</p>
                                         <Link href="/dashboard" className="text-secondary font-bold hover:underline">
                                             İndi iş axtar
                                         </Link>
@@ -119,7 +119,7 @@ export default async function ProfilePage() {
                                                     <span className="font-bold text-secondary text-lg">{proposal.amount} ₼</span>
                                                 </div>
                                                 <div className="flex justify-between items-center text-sm">
-                                                    <span className="text-gray-500">{proposal.request.city} • {new Date(proposal.createdAt).toLocaleDateString('az-AZ')}</span>
+                                                    <span className="text-gray-600">{proposal.request.city} • {new Date(proposal.createdAt).toLocaleDateString('az-AZ')}</span>
                                                     <span className="bg-blue-50 text-blue-600 px-2 py-1 rounded text-xs font-medium">
                                                         Müştəriyə Zəng Edilib
                                                     </span>

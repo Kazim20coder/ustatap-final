@@ -31,7 +31,7 @@ export default function ProposalForm({ requestId }: { requestId: string }) {
                     placeholder="Qiymət (AZN)"
                     className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
                 />
-                <span className="absolute right-3 top-1/2 -translate-y-1/2 font-bold text-gray-400">₼</span>
+                <span className="absolute right-3 top-1/2 -translate-y-1/2 font-bold text-gray-600">₼</span>
             </div>
             <button
                 type="submit"

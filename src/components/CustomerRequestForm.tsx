@@ -72,7 +72,7 @@ export default function CustomerRequestForm() {
                         {[1, 2, 3].map((s) => (
                             <div
                                 key={s}
-                                className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-colors duration-300 ${step >= s ? 'bg-secondary text-white ring-4 ring-white' : 'bg-accent text-gray-400 ring-4 ring-white'
+                                className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-colors duration-300 ${step >= s ? 'bg-secondary text-white ring-4 ring-white' : 'bg-accent text-gray-500 ring-4 ring-white'
                                     }`}
                             >
                                 {s}
@@ -80,7 +80,7 @@ export default function CustomerRequestForm() {
                         ))}
                     </div>
 
-                    <div className="flex justify-between text-xs font-medium text-gray-500 mb-8 px-2">
+                    <div className="flex justify-between text-xs font-bold text-gray-700 mb-8 px-2">
                         <span>1. Xidmət Detalları</span>
                         <span>2. Məkan</span>
                         <span>3. Tarix və Vaxt</span>
@@ -200,7 +200,7 @@ export default function CustomerRequestForm() {
                         <button
                             onClick={handlePrev}
                             disabled={step === 1 || isSubmitting}
-                            className={`px-6 py-3 rounded-lg font-medium transition-all ${step === 1 || isSubmitting ? 'text-gray-400 cursor-not-allowed bg-accent' : 'text-primary bg-primary/10 hover:bg-primary hover:text-white'
+                            className={`px-6 py-3 rounded-lg font-medium transition-all ${step === 1 || isSubmitting ? 'text-gray-500 cursor-not-allowed bg-accent' : 'text-primary bg-primary/10 hover:bg-primary hover:text-white'
                                 }`}
                         >
                             Geri

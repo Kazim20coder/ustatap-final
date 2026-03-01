@@ -40,7 +40,7 @@ export default async function RecentRequests() {
                                 <span className="bg-white text-secondary text-xs font-bold px-3 py-1 rounded-full border border-gray-100 shadow-sm">
                                     {job.status}
                                 </span>
-                                <span className="text-xs text-gray-500 font-medium">{job.city}</span>
+                                <span className="text-xs text-gray-600 font-medium">{job.city}</span>
                             </div>
 
                             <h3 className="font-bold text-lg text-primary mb-2 line-clamp-1">{job.service}</h3>
@@ -49,7 +49,7 @@ export default async function RecentRequests() {
                             </p>
 
                             <div className="pt-4 border-t border-gray-100 flex justify-between items-center mt-auto">
-                                <span className="text-xs text-gray-500">{new Date(job.createdAt).toLocaleDateString('az-AZ')}</span>
+                                <span className="text-xs text-gray-600">{new Date(job.createdAt).toLocaleDateString('az-AZ')}</span>
                                 {isPro ? (
                                     <Link href="/dashboard" className="text-primary text-sm font-bold hover:underline">
                                         Təklif Göndər

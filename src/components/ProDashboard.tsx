@@ -139,7 +139,7 @@ export default async function ProDashboard() {
                                 <div className="flex justify-between items-start mb-4">
                                     <div>
                                         <h3 className="font-bold text-xl text-primary">{job.service}</h3>
-                                        <p className="text-sm text-gray-500 font-medium">{job.id}</p>
+                                        <p className="text-sm text-gray-600 font-medium">{job.id}</p>
                                     </div>
                                     <div className="text-right">
                                         <p className="text-sm font-semibold text-gray-700">Tarix</p>
@@ -153,25 +153,25 @@ export default async function ProDashboard() {
 
                                 <div className="grid grid-cols-2 gap-y-3 mb-6">
                                     <div>
-                                        <p className="text-xs text-gray-500 font-medium">Məkan</p>
+                                        <p className="text-xs text-gray-600 font-medium">Məkan</p>
                                         <p className="text-sm font-semibold text-gray-800">{job.location}</p>
                                     </div>
                                     <div>
-                                        <p className="text-xs text-gray-500 font-medium">Büdcə / Təklif</p>
+                                        <p className="text-xs text-gray-600 font-medium">Büdcə / Təklif</p>
                                         <p className="text-sm font-semibold text-gray-800">{job.budget}</p>
                                     </div>
                                     <div>
-                                        <p className="text-xs text-gray-500 font-medium">Müştəri</p>
+                                        <p className="text-xs text-gray-600 font-medium">Müştəri</p>
                                         <p className="text-sm font-semibold text-gray-800 flex items-center gap-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                                             </svg>
                                             {job.customer}
                                         </p>
                                     </div>
                                     <div className="col-span-2">
-                                        <p className="text-xs text-gray-500 font-medium">Əlaqə nömrəsi</p>
-                                        <p className={`text-sm font-semibold mt-1 flex items-center gap-1 ${(job.status === 'Qəbul edilib' || job.isProposed) ? 'text-primary' : 'text-gray-400 blur-[4px] select-none hover:blur-none transition-all'}`}>
+                                        <p className="text-xs text-gray-600 font-medium">Əlaqə nömrəsi</p>
+                                        <p className={`text-sm font-semibold mt-1 flex items-center gap-1 ${(job.status === 'Qəbul edilib' || job.isProposed) ? 'text-primary' : 'text-gray-500 blur-[4px] select-none hover:blur-none transition-all'}`}>
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                                             </svg>

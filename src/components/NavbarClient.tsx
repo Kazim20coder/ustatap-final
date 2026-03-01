@@ -43,7 +43,7 @@ export default function NavbarClient({ session }: { session: SessionData | null 
                             <div className="flex items-center gap-6 border-l border-gray-200 pl-6 ml-2">
                                 <Link href={session.role === 'PRO' ? "/profile" : "/"} className="flex flex-col items-end group">
                                     <span className="text-sm font-bold text-gray-800 group-hover:text-primary transition-colors">{session.name}</span>
-                                    <span className="text-xs text-gray-500 bg-gray-100 group-hover:bg-primary/10 px-2 rounded-full mt-0.5 transition-colors">{session.role}</span>
+                                    <span className="text-xs text-gray-700 bg-gray-100 group-hover:bg-primary/10 px-2 rounded-full mt-0.5 transition-colors">{session.role}</span>
                                 </Link>
                                 <form action={logoutUser}>
                                     <button
@@ -97,7 +97,7 @@ export default function NavbarClient({ session }: { session: SessionData | null 
                             <div className="flex flex-col space-y-4">
                                 <Link href={session.role === 'PRO' ? "/profile" : "/"} className="flex flex-col bg-gray-50 p-3 rounded-xl border border-gray-100">
                                     <span className="font-bold text-gray-800">{session.name}</span>
-                                    <span className="text-xs text-gray-500 mt-1">{session.role} profili</span>
+                                    <span className="text-xs text-gray-600 mt-1">{session.role} profili</span>
                                 </Link>
                                 <form action={logoutUser} className="w-full">
                                     <button

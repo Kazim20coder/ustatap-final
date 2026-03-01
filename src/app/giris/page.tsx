@@ -10,7 +10,7 @@ export default function GirisPage() {
                 <div className="max-w-md w-full bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                     <div className="text-center mb-8">
                         <h1 className="text-3xl font-bold text-primary mb-2">Giriş</h1>
-                        <p className="text-foreground opacity-80">
+                        <p className="text-gray-600">
                             Hesabınıza daxil olun
                         </p>
                     </div>
