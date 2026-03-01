@@ -28,8 +28,8 @@ export default async function RecentRequests() {
                     <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
                         Son Göndərilən <span className="text-secondary">Sorğular</span>
                     </h2>
-                    <p className="text-xl text-foreground max-w-2xl mx-auto opacity-80">
-                        Ustalarımız hər gün yüzlərlə müştəriyə kömək edir. İndi qoşulun və qazanmağa başlayın.
+                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Müştərilərin ən son axtardığı xidmətlər
                     </p>
                 </div>
 

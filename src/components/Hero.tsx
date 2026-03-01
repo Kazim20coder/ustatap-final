@@ -31,8 +31,8 @@ export default function Hero() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-6 tracking-tight leading-tight">
                     Eviniz üçün peşəkar <br className="hidden sm:block" /> xidmət axtarırsınız?
                 </h1>
-                <p className="text-lg md:text-xl text-foreground mb-10 max-w-2xl mx-auto opacity-90">
-                    Axtardığınız ustayı saniyələr içində tapın. Minlərlə peşəkar hazırda xidmətinizdədir.
+                <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
+                    Ev təmizliyindən tutmuş santexnik işlərinə qədər hər şey üçün etibarlı ustaları saniyələr içində tapın.
                 </p>
 
                 <div className="relative max-w-3xl mx-auto group">

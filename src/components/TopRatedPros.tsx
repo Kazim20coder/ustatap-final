@@ -45,7 +45,7 @@ export default function TopRatedPros() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Ən Yüksək Reytinqli Ustalar</h2>
-                        <p className="text-foreground text-lg opacity-80 max-w-2xl">
+                        <p className="text-gray-600 text-lg max-w-2xl">
                             İşini sevərək və peşəkarcasına görən ən yaxşı ustalarımız.
                         </p>
                     </div>

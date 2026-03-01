@@ -63,7 +63,7 @@ export default function CategoryGrid() {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Populyar Xidmətlər</h2>
-                    <p className="text-foreground text-lg opacity-80 max-w-2xl mx-auto">
+                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                         Müştərilərimizin ən çox müraciət etdiyi sahələr üzrə ən bacarıqlı ustalarla tanış olun.
                     </p>
                 </div>

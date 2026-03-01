@@ -106,8 +106,8 @@ export default async function ProDashboard() {
                 <div className="flex flex-col md:flex-row justify-between items-center mb-10">
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">Xoş gəldiniz, {sessionToken?.user?.name}</h2>
-                        <p className="text-foreground opacity-80">
-                            Yeni işləri görün və qiymət təklifi göndərin.
+                        <p className="text-gray-600">
+                            Hal-hazırda aktiv müştəri sorğusu yoxdur.
                         </p>
                     </div>
                     <div className="mt-4 md:mt-0 flex gap-4">
