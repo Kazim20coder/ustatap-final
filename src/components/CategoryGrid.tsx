@@ -63,7 +63,7 @@ export default function CategoryGrid() {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Populyar Xidmətlər</h2>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-900 font-medium text-lg max-w-2xl mx-auto">
                         Müştərilərimizin ən çox müraciət etdiyi sahələr üzrə ən bacarıqlı ustalarla tanış olun.
                     </p>
                 </div>
@@ -77,7 +77,7 @@ export default function CategoryGrid() {
                             <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300 mb-4 text-primary">
                                 {category.icon}
                             </div>
-                            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                            <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors">
                                 {category.name}
                             </h3>
                         </div>
