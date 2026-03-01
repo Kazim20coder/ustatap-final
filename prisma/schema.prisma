@@ -1,0 +1,52 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id             String     @id @default(uuid())
+  email          String     @unique
+  password       String
+  name           String
+  role           String     @default("CUSTOMER") // "CUSTOMER" or "PRO"
+  credits        Int        @default(20)
+  createdAt      DateTime   @default(now())
+  proposals      Proposal[]
+  rating         Float      @default(0.0)
+  completedJobs  Int        @default(0)
+  specialty      String?    // e.g., "Santexnik, Elektrik"
+  about          String?
+}
+
+model ServiceRequest {
+  id        String     @id @default(uuid())
+  service   String     // e.g., "Ev Təmizliyi"
+  area      Int?       // e.g., 80
+  city      String     // e.g., "Bakı, Nəsimi"
+  address   String     // e.g., "Nizami metrosu"
+  date      String     // e.g., "2024-05-12"
+  timeSlot  String     // e.g., "Səhər (09:00-13:00)"
+  status    String     @default("Yeni") // "Yeni", "Qəbul edilib"
+  budget    String     @default("Sərbəst")
+  customer  String     @default("Anonim Müştəri")
+  phone     String     @default("Gözləyir...")
+  createdAt DateTime   @default(now())
+  proposals Proposal[]
+}
+
+model Proposal {
+  id        String         @id @default(uuid())
+  requestId String
+  proId     String
+  amount    Float
+  createdAt DateTime       @default(now())
+
+  request   ServiceRequest @relation(fields: [requestId], references: [id])
+  pro       User           @relation(fields: [proId], references: [id])
+
+  @@unique([requestId, proId])
+}
