@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import prisma from '@/lib/prisma';
 import Link from 'next/link';
 import { getSession } from '@/lib/auth';
-import { redirect } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
 

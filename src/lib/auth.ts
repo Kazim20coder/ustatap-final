@@ -1,11 +1,10 @@
-import { SignJWT, jwtVerify } from "jose";
+import { SignJWT, jwtVerify, JWTPayload } from "jose";
 import { cookies } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
 
 const secretKey = process.env.JWT_SECRET || "super-secret-key-for-ustatap";
 const key = new TextEncoder().encode(secretKey);
 
-export async function encrypt(payload: any) {
+export async function encrypt(payload: JWTPayload) {
     return await new SignJWT(payload)
         .setProtectedHeader({ alg: "HS256" })
         .setIssuedAt()
@@ -13,7 +12,7 @@ export async function encrypt(payload: any) {
         .sign(key);
 }
 
-export async function decrypt(input: string): Promise<any> {
+export async function decrypt(input: string): Promise<JWTPayload> {
     const { payload } = await jwtVerify(input, key, {
         algorithms: ["HS256"],
     });
@@ -40,8 +39,9 @@ export async function getSession() {
     if (!session) return null;
 
     try {
-        return await decrypt(session);
-    } catch (error) {
+        const payload = await decrypt(session);
+        return payload as unknown as { user: { id: string; email: string; role: string; name: string } };
+    } catch {
         return null;
     }
 }

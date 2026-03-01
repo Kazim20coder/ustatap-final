@@ -4,7 +4,14 @@ import Link from "next/link";
 import { logoutUser } from "@/app/actions/auth";
 import { useState } from "react";
 
-export default function NavbarClient({ session }: { session: any }) {
+export interface SessionData {
+    id: string;
+    email: string;
+    role: string;
+    name: string;
+}
+
+export default function NavbarClient({ session }: { session: SessionData | null }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
