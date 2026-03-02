@@ -4,16 +4,16 @@ import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
-export async function generateMetadata(props: { params: Promise<{ id: string }> | { id: string } }) {
-    // Await params if it's a promise, per Next.js 15+ patterns. 
-    // Types might complain but we handle it gracefully here.
-    const params = await Promise.resolve(props.params);
-    const { id } = params;
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
 
-    const pro = await prisma.user.findUnique({
-        where: { id },
-        select: { name: true, specialty: true }
-    });
+    let pro = null;
+    try {
+        pro = await prisma.user.findUnique({
+            where: { id },
+            select: { name: true, specialty: true }
+        });
+    } catch { }
 
     if (!pro) {
         return { title: 'Tapılmadı - UstaTap' };
@@ -25,15 +25,8 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
     };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default async function ProProfilePage(props: any) {
-    const params = await Promise.resolve(props.params);
-    const { id } = params;
-
-    // We check if it's essentially an invalid UUID to avoid crashing Prisma with 500 error on random strings.
-    if (!id || id.length < 5) {
-        notFound();
-    }
+export default async function ProProfilePage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
 
     let pro;
     try {
@@ -43,6 +36,20 @@ export default async function ProProfilePage(props: any) {
     } catch (e) {
         console.error("Error finding pro:", e);
         notFound();
+    }
+
+    if (!pro && ["1", "2", "3", "4"].includes(id)) {
+        // Fallback for static mock pros from TopRatedPros
+        pro = {
+            id,
+            name: id === "1" ? "Tofiq S." : id === "2" ? "Samir K." : id === "3" ? "Aysel M." : "Rüfət A.",
+            specialty: id === "1" ? "Santexnik" : id === "2" ? "Elektrik" : id === "3" ? "Ev Təmizliyi" : "Mebel Quraşdırma",
+            role: "PRO",
+            completedJobs: id === "1" ? 124 : id === "2" ? 89 : id === "3" ? 210 : 156,
+            rating: id === "1" ? 4.9 : id === "2" ? 5.0 : id === "3" ? 4.8 : 4.9,
+            createdAt: new Date(),
+            about: "Bu, sistem tərəfindən yaradılmış nümunəvi profil səhifəsidir."
+        };
     }
 
     if (!pro || pro.role !== 'PRO') {
