@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const placeholders = [
     "Təmizlik, təmir və ya daşınma...",
@@ -11,6 +12,15 @@ const placeholders = [
 
 export default function Hero() {
     const [placeholderIndex, setPlaceholderIndex] = useState(0);
+    const [searchTerm, setSearchTerm] = useState("");
+    const router = useRouter();
+
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (searchTerm.trim()) {
+            router.push(`/?q=${encodeURIComponent(searchTerm.trim())}`);
+        }
+    };
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -37,7 +47,7 @@ export default function Hero() {
 
                 <div className="relative max-w-3xl mx-auto group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                    <div className="relative flex items-center bg-white rounded-full shadow-lg p-2 transition-all">
+                    <form onSubmit={handleSearch} className="relative flex items-center bg-white rounded-full shadow-lg p-2 transition-all">
                         <div className="pl-4 pr-2 text-gray-500">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -45,14 +55,16 @@ export default function Hero() {
                         </div>
                         <input
                             type="text"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
                             className="w-full py-4 px-2 bg-transparent text-foreground outline-none text-lg selection:bg-primary/20"
                             placeholder={placeholders[placeholderIndex]}
                             style={{ transition: "placeholder 0.3s ease-in-out" }}
                         />
-                        <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 flex items-center gap-2">
+                        <button type="submit" className="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 flex items-center gap-2">
                             <span>Axtar</span>
                         </button>
-                    </div>
+                    </form>
                 </div>
 
                 <div className="mt-8 flex items-center justify-center gap-6 text-sm font-medium text-gray-700">
