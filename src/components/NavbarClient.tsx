@@ -57,7 +57,7 @@ export default function NavbarClient({ session }: { session: SessionData | null 
                         ) : (
                             <Link
                                 href="/giris"
-                                className="text-primary border-2 border-primary hover:bg-primary hover:text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                                className="text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
                             >
                                 Giriş
                             </Link>
@@ -111,7 +111,7 @@ export default function NavbarClient({ session }: { session: SessionData | null 
                         ) : (
                             <Link
                                 href="/giris"
-                                className="block text-center text-primary border-2 border-primary hover:bg-primary hover:text-white px-6 py-2 rounded-lg font-semibold transition-all"
+                                className="block text-center text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
                             >
                                 Giriş
                             </Link>
