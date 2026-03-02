@@ -57,7 +57,7 @@ export default function LoginForm() {
             <button
                 type="submit"
                 disabled={isPending}
-                className="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-primary/90 transition-colors disabled:bg-gray-400 mt-4"
+                className="w-full bg-blue-600 text-white font-medium py-3 rounded-xl hover:bg-blue-700 transition-all shadow-sm disabled:bg-gray-400 mt-4"
             >
                 {isPending ? 'Daxil olunur...' : 'Daxil Ol'}
             </button>

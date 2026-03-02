@@ -208,7 +208,7 @@ export default function CustomerRequestForm() {
                         <button
                             onClick={handleNext}
                             disabled={isSubmitting}
-                            className="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 transition-all duration-300 hover:bg-blue-800 hover:text-white block visible opacity-100 shadow-sm"
+                            className="px-8 py-3 rounded-lg font-medium text-white bg-blue-600 transition-all hover:bg-blue-700 block visible opacity-100 shadow-sm"
                         >
                             {isSubmitting ? 'Göndərilir...' : (step === 3 ? 'Sorğu Göndər' : 'Növbəti')}
                         </button>
