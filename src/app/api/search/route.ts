@@ -9,10 +9,11 @@ export async function GET(request: Request) {
         return NextResponse.json({ pros: [] });
     }
 
+    console.log("Axtarılan söz:", q);
+
     try {
         const pros = await prisma.user.findMany({
             where: {
-                role: 'PRO',
                 OR: [
                     { name: { contains: q, mode: 'insensitive' } },
                     { specialty: { contains: q, mode: 'insensitive' } }
@@ -27,6 +28,8 @@ export async function GET(request: Request) {
             },
             take: 20
         });
+
+        console.log("Tapılan ustalar:", pros);
 
         // Add mock image and location for display purposes
         const prosWithDisplayData = pros.map((pro, index) => ({
