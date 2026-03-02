@@ -69,7 +69,7 @@ export default function RegisterForm() {
             <button
                 type="submit"
                 disabled={isPending}
-                className="w-full bg-blue-600 text-white font-medium py-3 rounded-xl hover:bg-blue-700 transition-all shadow-sm disabled:bg-gray-400 mt-4"
+                className="w-full bg-blue-600 text-white font-medium py-3 rounded-xl hover:bg-blue-700 hover:text-white transition-all shadow-sm disabled:bg-gray-400 mt-4"
             >
                 {isPending ? 'Qeydiyyatdan Keçilir...' : 'Usta Kimi Qeydiyyatdan Keç'}
             </button>
