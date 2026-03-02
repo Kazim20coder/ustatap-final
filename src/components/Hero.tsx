@@ -49,7 +49,7 @@ export default function Hero() {
                             placeholder={placeholders[placeholderIndex]}
                             style={{ transition: "placeholder 0.3s ease-in-out" }}
                         />
-                        <button className="bg-secondary text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#0EA5E9] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 flex items-center gap-2">
+                        <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 flex items-center gap-2">
                             <span>Axtar</span>
                         </button>
                     </div>

@@ -20,7 +20,7 @@ export default async function ProDashboard() {
                         Bu paneli görmək və müştəri sorğularına təklif göndərmək üçün usta kimi qeydiyyatdan keçməlisiniz.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/usta-ol" className="bg-secondary text-white px-8 py-3 rounded-lg font-bold hover:bg-[#0EA5E9] transition-all">
+                        <Link href="/usta-ol" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition-all">
                             Qeydiyyatdan Keç
                         </Link>
                         <Link href="/giris" className="bg-white border-2 border-primary text-primary px-8 py-3 rounded-lg font-bold hover:bg-primary hover:text-white transition-all">
@@ -192,7 +192,7 @@ export default async function ProDashboard() {
                                         <div className="flex-1 relative">
                                             <input disabled type="number" placeholder="Demo (AZN)" className="w-full border border-gray-200 rounded-lg p-3 cursor-not-allowed bg-gray-50" />
                                         </div>
-                                        <button disabled className="flex-1 bg-secondary/50 text-white px-4 py-3 rounded-lg font-bold cursor-not-allowed">
+                                        <button disabled className="flex-1 bg-blue-600/50 text-white px-4 py-3 rounded-lg font-bold cursor-not-allowed">
                                             Demo İşi
                                         </button>
                                     </div>

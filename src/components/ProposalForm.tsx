@@ -36,7 +36,7 @@ export default function ProposalForm({ requestId }: { requestId: string }) {
             <button
                 type="submit"
                 disabled={isPending}
-                className="flex-1 bg-secondary text-white px-4 py-3 rounded-lg font-bold hover:bg-[#0EA5E9] transition shadow-sm hover:shadow-md hover:-translate-y-0.5 duration-300 disabled:bg-gray-400 disabled:hover:translate-y-0"
+                className="flex-1 bg-blue-600 text-white px-4 py-3 rounded-lg font-bold hover:bg-blue-700 transition shadow-sm hover:shadow-md hover:-translate-y-0.5 duration-300 disabled:bg-gray-400 disabled:hover:translate-y-0"
             >
                 {isPending ? 'Göndərilir...' : 'Təklif Göndər (1 kredit)'}
             </button>

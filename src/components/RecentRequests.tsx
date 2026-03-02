@@ -66,7 +66,7 @@ export default async function RecentRequests() {
 
                 {!isPro && (
                     <div className="mt-12 text-center">
-                        <Link href="/usta-ol" className="inline-block bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:bg-[#0EA5E9] transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+                        <Link href="/usta-ol" className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
                             Usta Kimi Qeydiyyatdan Keç
                         </Link>
                     </div>
