@@ -54,7 +54,7 @@ export default function CustomerRequestForm() {
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="request-form">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Xidmət Sorğusu Yarat (Demo)</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-4">Xidmət Sorğusu Yarat (Demo)</h2>
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                         Ehtiyacınız olan xidməti tapmaq üçün sadəcə 3 addımı tamamlayın.
                     </p>
@@ -65,14 +65,14 @@ export default function CustomerRequestForm() {
                     <div className="flex items-center justify-between mb-8 relative">
                         <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-1 bg-accent -z-10"></div>
                         <div
-                            className="absolute left-0 top-1/2 transform -translate-y-1/2 h-1 bg-secondary transition-all duration-300 -z-10"
+                            className="absolute left-0 top-1/2 transform -translate-y-1/2 h-1 bg-blue-600 transition-all duration-300 -z-10"
                             style={{ width: `${((step - 1) / 2) * 100}%` }}
                         ></div>
 
                         {[1, 2, 3].map((s) => (
                             <div
                                 key={s}
-                                className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-colors duration-300 ${step >= s ? 'bg-secondary text-white ring-4 ring-white' : 'bg-accent text-gray-500 ring-4 ring-white'
+                                className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-colors duration-300 ${step >= s ? 'bg-blue-600 text-white ring-4 ring-white' : 'bg-accent text-gray-500 ring-4 ring-white'
                                     }`}
                             >
                                 {s}
@@ -90,14 +90,14 @@ export default function CustomerRequestForm() {
                         {/* Step 1: Details */}
                         {step === 1 && (
                             <div className="space-y-6 animate-in fade-in slide-in-from-right-8 duration-500">
-                                <h3 className="text-xl font-bold text-primary mb-4">Ehtiyacınız nədir?</h3>
+                                <h3 className="text-xl font-bold text-blue-600 mb-4">Ehtiyacınız nədir?</h3>
                                 <div className="space-y-4">
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-1">Xidmət Növü</label>
                                         <select
                                             value={formData.service}
                                             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                                            className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
+                                            className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 transition-all"
                                         >
                                             <option>Ev Təmizliyi</option>
                                             <option>Santexnik işləri</option>
@@ -112,7 +112,7 @@ export default function CustomerRequestForm() {
                                             placeholder="Məs: 80"
                                             value={formData.area}
                                             onChange={(e) => setFormData({ ...formData, area: e.target.value })}
-                                            className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
+                                            className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 transition-all"
                                         />
                                     </div>
                                 </div>
@@ -122,14 +122,14 @@ export default function CustomerRequestForm() {
                         {/* Step 2: Location */}
                         {step === 2 && (
                             <div className="space-y-6 animate-in fade-in slide-in-from-right-8 duration-500">
-                                <h3 className="text-xl font-bold text-primary mb-4">Hardadır?</h3>
+                                <h3 className="text-xl font-bold text-blue-600 mb-4">Hardadır?</h3>
                                 <div className="space-y-4">
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-1">Şəhər / Rayon</label>
                                         <select
                                             value={formData.city}
                                             onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                                            className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
+                                            className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 transition-all"
                                         >
                                             <option>Bakı, Nəsimi</option>
                                             <option>Bakı, Yasamal</option>
@@ -145,7 +145,7 @@ export default function CustomerRequestForm() {
                                             placeholder="Məs: Nizami metrosunun yaxınlığı..."
                                             value={formData.address}
                                             onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                                            className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all resize-none"
+                                            className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 transition-all resize-none"
                                         ></textarea>
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@ export default function CustomerRequestForm() {
                         {/* Step 3: Date */}
                         {step === 3 && (
                             <div className="space-y-6 animate-in fade-in slide-in-from-right-8 duration-500">
-                                <h3 className="text-xl font-bold text-primary mb-4">Nə vaxt lazım olacaq?</h3>
+                                <h3 className="text-xl font-bold text-blue-600 mb-4">Nə vaxt lazım olacaq?</h3>
                                 <div className="space-y-4">
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-1">Tarix</label>
@@ -163,13 +163,13 @@ export default function CustomerRequestForm() {
                                             type="date"
                                             value={formData.date}
                                             onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                                            className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
+                                            className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 transition-all"
                                         />
                                     </div>
                                     <div>
                                         <label className="block text-sm font-medium text-gray-700 mb-1">Uyğun Vaxt Aralığı</label>
                                         <div className="grid grid-cols-2 gap-4">
-                                            <label className={`border border-gray-200 rounded-lg p-3 cursor-pointer hover:border-secondary transition-all text-center ${formData.timeSlot === 'Səhər (09:00-13:00)' ? 'bg-secondary/10 border-secondary' : 'hover:bg-secondary/5'}`}>
+                                            <label className={`border border-gray-200 rounded-lg p-3 cursor-pointer hover:border-blue-600 transition-all text-center ${formData.timeSlot === 'Səhər (09:00-13:00)' ? 'bg-blue-600/10 border-blue-600' : 'hover:bg-blue-600/5'}`}>
                                                 <input
                                                     type="radio"
                                                     name="time"
@@ -177,9 +177,9 @@ export default function CustomerRequestForm() {
                                                     checked={formData.timeSlot === 'Səhər (09:00-13:00)'}
                                                     onChange={() => setFormData({ ...formData, timeSlot: 'Səhər (09:00-13:00)' })}
                                                 />
-                                                <span className={formData.timeSlot === 'Səhər (09:00-13:00)' ? 'text-secondary font-medium' : ''}>Səhər (09:00-13:00)</span>
+                                                <span className={formData.timeSlot === 'Səhər (09:00-13:00)' ? 'text-blue-600 font-medium' : ''}>Səhər (09:00-13:00)</span>
                                             </label>
-                                            <label className={`border border-gray-200 rounded-lg p-3 cursor-pointer hover:border-secondary transition-all text-center ${formData.timeSlot === 'Günorta (13:00-18:00)' ? 'bg-secondary/10 border-secondary' : 'hover:bg-secondary/5'}`}>
+                                            <label className={`border border-gray-200 rounded-lg p-3 cursor-pointer hover:border-blue-600 transition-all text-center ${formData.timeSlot === 'Günorta (13:00-18:00)' ? 'bg-blue-600/10 border-blue-600' : 'hover:bg-blue-600/5'}`}>
                                                 <input
                                                     type="radio"
                                                     name="time"
@@ -187,7 +187,7 @@ export default function CustomerRequestForm() {
                                                     checked={formData.timeSlot === 'Günorta (13:00-18:00)'}
                                                     onChange={() => setFormData({ ...formData, timeSlot: 'Günorta (13:00-18:00)' })}
                                                 />
-                                                <span className={formData.timeSlot === 'Günorta (13:00-18:00)' ? 'text-secondary font-medium' : ''}>Günorta (13:00-18:00)</span>
+                                                <span className={formData.timeSlot === 'Günorta (13:00-18:00)' ? 'text-blue-600 font-medium' : ''}>Günorta (13:00-18:00)</span>
                                             </label>
                                         </div>
                                     </div>
@@ -200,7 +200,7 @@ export default function CustomerRequestForm() {
                         <button
                             onClick={handlePrev}
                             disabled={step === 1 || isSubmitting}
-                            className={`px-6 py-3 rounded-lg font-medium transition-all ${step === 1 || isSubmitting ? 'text-gray-500 cursor-not-allowed bg-accent' : 'text-primary bg-primary/10 hover:bg-primary hover:text-white'
+                            className={`px-6 py-3 rounded-lg font-medium transition-all ${step === 1 || isSubmitting ? 'text-gray-500 cursor-not-allowed bg-accent' : 'text-blue-600 bg-blue-600/10 hover:bg-blue-600 hover:text-white'
                                 }`}
                         >
                             Geri

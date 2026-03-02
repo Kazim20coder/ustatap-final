@@ -20,21 +20,21 @@ export default function NavbarClient({ session }: { session: SessionData | null 
                 <div className="flex justify-between h-20 items-center">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="text-primary text-3xl font-bold tracking-tight">
+                        <Link href="/" className="text-blue-600 text-3xl font-bold tracking-tight">
                             UstaTap
                         </Link>
                     </div>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
-                        <Link href="/xidmetler" className="text-foreground hover:text-primary transition-colors font-medium">
+                        <Link href="/xidmetler" className="text-foreground hover:text-blue-600 transition-colors font-medium">
                             Xidmətlər
                         </Link>
-                        <Link href="/nece-isleyir" className="text-foreground hover:text-primary transition-colors font-medium">
+                        <Link href="/nece-isleyir" className="text-foreground hover:text-blue-600 transition-colors font-medium">
                             Necə İşləyir?
                         </Link>
                         {!session || session.role !== 'PRO' ? (
-                            <Link href="/usta-ol" className="text-foreground hover:text-primary transition-colors font-medium">
+                            <Link href="/usta-ol" className="text-foreground hover:text-blue-600 transition-colors font-medium">
                                 Usta Ol
                             </Link>
                         ) : null}
@@ -42,8 +42,8 @@ export default function NavbarClient({ session }: { session: SessionData | null 
                         {session ? (
                             <div className="flex items-center gap-6 border-l border-gray-200 pl-6 ml-2">
                                 <Link href={session.role === 'PRO' ? "/profile" : "/"} className="flex flex-col items-end group">
-                                    <span className="text-sm font-bold text-gray-800 group-hover:text-primary transition-colors">{session.name}</span>
-                                    <span className="text-xs text-gray-700 bg-gray-100 group-hover:bg-primary/10 px-2 rounded-full mt-0.5 transition-colors">{session.role}</span>
+                                    <span className="text-sm font-bold text-gray-800 group-hover:text-blue-600 transition-colors">{session.name}</span>
+                                    <span className="text-xs text-gray-700 bg-gray-100 group-hover:bg-blue-600/10 px-2 rounded-full mt-0.5 transition-colors">{session.role}</span>
                                 </Link>
                                 <form action={logoutUser}>
                                     <button
@@ -68,7 +68,7 @@ export default function NavbarClient({ session }: { session: SessionData | null 
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="text-foreground hover:text-primary focus:outline-none"
+                            className="text-foreground hover:text-blue-600 focus:outline-none"
                         >
                             <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 {isMenuOpen ? (

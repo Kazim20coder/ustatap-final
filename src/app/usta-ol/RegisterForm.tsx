@@ -38,7 +38,7 @@ export default function RegisterForm() {
                     type="text"
                     name="name"
                     required
-                    className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
+                    className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 transition-all"
                     placeholder="Məs: Əli Əliyev"
                 />
             </div>
@@ -49,7 +49,7 @@ export default function RegisterForm() {
                     type="email"
                     name="email"
                     required
-                    className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
+                    className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 transition-all"
                     placeholder="nümunə@email.az"
                 />
             </div>
@@ -60,7 +60,7 @@ export default function RegisterForm() {
                     type="password"
                     name="password"
                     required
-                    className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
+                    className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 transition-all"
                     placeholder="Ən azı 6 simvol"
                     minLength={6}
                 />
