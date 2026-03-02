@@ -59,7 +59,7 @@ export default function SearchResults({ q }: { q: string }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     {results.map((pro: any) => (
-                        <div key={pro.id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300">
+                        <Link href={`/profile/${pro.id}`} key={pro.id} className="block bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group">
                             <div className="p-6">
                                 <div className="flex items-start gap-4 mb-4">
                                     <div className="relative">
@@ -87,11 +87,11 @@ export default function SearchResults({ q }: { q: string }) {
                                         {pro.location}
                                     </div>
                                 </div>
-                                <button className="w-full bg-green-400 text-gray-900 hover:bg-green-500 py-3 rounded-xl font-extrabold transition-colors shadow-md border border-green-500 text-lg">
-                                    Zəng Et
-                                </button>
+                                <div className="w-full text-center bg-green-400 text-gray-900 group-hover:bg-green-500 py-3 rounded-xl font-extrabold transition-colors shadow-md border border-green-500 text-lg">
+                                    Profilə Bax
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
