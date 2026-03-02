@@ -73,9 +73,11 @@ export default async function ProProfilePage({ params }: { params: Promise<{ id:
                         <div className="px-8 pb-8">
                             <div className="relative flex justify-between items-end -mt-16 mb-8">
                                 <div className="p-1 bg-white inline-block rounded-full shadow-lg">
-                                    <img
+                                    <Image
                                         src={imageUrl}
                                         alt={pro.name}
+                                        width={128}
+                                        height={128}
                                         className="w-32 h-32 rounded-full object-cover border-4 border-white"
                                     />
                                 </div>

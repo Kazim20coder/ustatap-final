@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function SearchResults({ q }: { q: string }) {
     const [results, setResults] = useState<any[]>([]);
@@ -63,7 +64,7 @@ export default function SearchResults({ q }: { q: string }) {
                             <div className="p-6">
                                 <div className="flex items-start gap-4 mb-4">
                                     <div className="relative">
-                                        <img src={pro.image} alt={pro.name} className="w-16 h-16 rounded-full object-cover border-2 border-accent" />
+                                        <Image src={pro.image} alt={pro.name} width={64} height={64} className="w-16 h-16 rounded-full object-cover border-2 border-accent" />
                                         <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-1">
                                             <div className="bg-blue-600 w-3 h-3 rounded-full"></div>
                                         </div>

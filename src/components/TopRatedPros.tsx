@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import Link from 'next/link';
 export default function TopRatedPros() {
     const pros = [
@@ -65,9 +65,11 @@ export default function TopRatedPros() {
                             <div className="p-6">
                                 <div className="flex items-start gap-4 mb-4">
                                     <div className="relative">
-                                        <img
+                                        <Image
                                             src={pro.image}
                                             alt={pro.name}
+                                            width={64}
+                                            height={64}
                                             className="w-16 h-16 rounded-full object-cover border-2 border-accent"
                                         />
                                         <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-1">
