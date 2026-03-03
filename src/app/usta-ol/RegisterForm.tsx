@@ -66,6 +66,36 @@ export default function RegisterForm() {
                 />
             </div>
 
+            <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">İxtisas</label>
+                <select
+                    name="specialty"
+                    required
+                    className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 transition-all bg-white"
+                >
+                    <option value="">İxtisas Seçin</option>
+                    <option value="Santexnik">Santexnik</option>
+                    <option value="Rəngsaz">Rəngsaz</option>
+                    <option value="Elektrik">Elektrik</option>
+                    <option value="Təmizlikçi">Təmizlikçi</option>
+                    <option value="Mebel Ustası">Mebel Ustası</option>
+                    <option value="Kondisioner Ustası">Kondisioner Ustası</option>
+                </select>
+            </div>
+
+            <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Təcrübə (il)</label>
+                <input
+                    type="number"
+                    name="experience"
+                    required
+                    min="0"
+                    max="60"
+                    className="w-full border border-gray-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-600/50 focus:border-blue-600 transition-all"
+                    placeholder="Məs: 5"
+                />
+            </div>
+
             <button
                 type="submit"
                 disabled={isPending}

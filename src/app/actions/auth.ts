@@ -10,8 +10,10 @@ export async function registerPro(formData: FormData) {
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
+    const specialty = formData.get('specialty') as string;
+    const experience = parseInt(formData.get('experience') as string) || 0;
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !specialty) {
         return { error: 'Bütün xanaları doldurun' };
     }
 
@@ -29,6 +31,8 @@ export async function registerPro(formData: FormData) {
                 email,
                 password: hashedPassword,
                 role: 'PRO',
+                specialty,
+                experience,
             },
         });
 

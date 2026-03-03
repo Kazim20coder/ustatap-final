@@ -1,6 +1,7 @@
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
@@ -19,6 +20,7 @@ model User {
   rating         Float      @default(0.0)
   completedJobs  Int        @default(0)
   specialty      String?    // e.g., "Santexnik, Elektrik"
+  experience     Int?       @default(0) // illərlə təcrübə
   about          String?
 }
 
