@@ -15,6 +15,7 @@ export default async function Home(props: any) {
 
   const searchParams = props.searchParams ? await props.searchParams : {};
   const q = searchParams.q;
+  const category = searchParams.category;
 
   if (session?.user?.role === "PRO") {
     redirect("/dashboard");
@@ -25,7 +26,7 @@ export default async function Home(props: any) {
       <Navbar />
       <main>
         <Hero />
-        {q ? <SearchResults q={q} /> : <CategoryGrid />}
+        {(q || category) ? <SearchResults q={q || ""} category={category || ""} /> : <CategoryGrid />}
         <CustomerRequestForm />
         <TopRatedPros />
         <RecentRequests />

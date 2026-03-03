@@ -3,13 +3,17 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function SearchResults({ q }: { q: string }) {
+export default function SearchResults({ q, category }: { q: string, category?: string }) {
     const [results, setResults] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setLoading(true);
-        fetch(`/api/search?q=${encodeURIComponent(q)}`)
+        const params = new URLSearchParams();
+        if (q) params.append('q', q);
+        if (category) params.append('category', category);
+
+        fetch(`/api/search?${params.toString()}`)
             .then(res => res.json())
             .then(data => {
                 setResults(data.pros || []);
@@ -24,8 +28,12 @@ export default function SearchResults({ q }: { q: string }) {
     if (loading) {
         return (
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="search-results">
-                <div className="max-w-7xl mx-auto text-center">
-                    <p className="text-xl text-gray-600 font-medium">"{q}" üçün axtarılır...</p>
+                <div className="max-w-7xl mx-auto text-center flex flex-col items-center justify-center">
+                    <svg className="animate-spin mb-4 h-10 w-10 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <p className="text-xl text-gray-600 font-medium">{[q, category].filter(Boolean).join(" - ")} üçün axtarılır...</p>
                 </div>
             </section>
         );
@@ -36,7 +44,7 @@ export default function SearchResults({ q }: { q: string }) {
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-center" id="search-results">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-3xl font-bold text-primary mb-4">Təəssüf ki, nəticə tapılmadı</h2>
-                    <p className="text-xl text-gray-600 mb-8 mt-4">"{q}" axtarışınıza uyğun usta tapılmadı.</p>
+                    <p className="text-xl text-gray-600 mb-8 mt-4">"{[q, category].filter(Boolean).join(" - ")}" axtarışınıza uyğun usta tapılmadı.</p>
                     <Link href="/" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition-all">
                         Bütün xidmətlərə qayıt
                     </Link>
@@ -50,7 +58,7 @@ export default function SearchResults({ q }: { q: string }) {
             <div className="max-w-7xl mx-auto">
                 <div className="flex items-center justify-between mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary">
-                        "<span className="text-blue-600">{q}</span>" üçün nəticələr
+                        "<span className="text-blue-600">{[q, category].filter(Boolean).join(" - ")}</span>" üçün nəticələr
                     </h2>
                     <Link href="/" className="text-primary font-semibold hover:text-blue-600 transition-colors">
                         Sıfırla &rarr;

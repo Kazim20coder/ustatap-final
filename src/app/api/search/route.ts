@@ -4,21 +4,40 @@ import prisma from '@/lib/prisma';
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const q = searchParams.get('q');
+    const category = searchParams.get('category');
 
-    if (!q) {
+    if (!q && !category) {
         return NextResponse.json({ pros: [] });
     }
 
-    console.log("Axtarılan söz:", q);
+    // Use Prisma types explicitly or any
+    const whereQuery: any = {};
+    const conditions = [];
+
+    if (q) {
+        conditions.push({
+            OR: [
+                { name: { contains: q, mode: 'insensitive' } },
+                { specialty: { contains: q, mode: 'insensitive' } }
+            ]
+        });
+    }
+
+    if (category) {
+        conditions.push({
+            specialty: { equals: category, mode: 'insensitive' }
+        });
+    }
+
+    if (conditions.length > 0) {
+        whereQuery.AND = conditions;
+    }
+
+    console.log("Axtarılan söz:", q, "| Kateqoriya:", category);
 
     try {
         const pros = await prisma.user.findMany({
-            where: {
-                OR: [
-                    { name: { contains: q, mode: 'insensitive' } },
-                    { specialty: { contains: q, mode: 'insensitive' } }
-                ]
-            },
+            where: whereQuery,
             select: {
                 id: true,
                 name: true,
