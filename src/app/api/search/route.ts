@@ -33,8 +33,6 @@ export async function GET(request: Request) {
         whereQuery.AND = conditions;
     }
 
-    console.log("Axtarılan söz:", q, "| Kateqoriya:", category);
-
     try {
         const pros = await prisma.user.findMany({
             where: whereQuery,
@@ -47,8 +45,6 @@ export async function GET(request: Request) {
             },
             take: 20
         });
-
-        console.log("Tapılan ustalar:", pros);
 
         // Add mock image and location for display purposes
         const prosWithDisplayData = pros.map((pro, index) => ({
