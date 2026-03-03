@@ -22,6 +22,21 @@ model User {
   specialty      String?    // e.g., "Santexnik, Elektrik"
   experience     Int?       @default(0) // illərlə təcrübə
   about          String?
+  bio            String?
+  phone          String?
+  portfolioImages String[]  @default([])
+  reviews        Review[]   @relation("UserReviews")
+}
+
+model Review {
+  id           String   @id @default(uuid())
+  rating       Int      // 1 to 5
+  comment      String
+  customerName String   @default("Anonim Müştəri")
+  createdAt    DateTime @default(now())
+  
+  proId        String
+  pro          User     @relation("UserReviews", fields: [proId], references: [id])
 }
 
 model ServiceRequest {
